@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card-img-top {
+    object-fit: cover !important;
+    max-width: 200px;
+    max-height: 300px;
+    min-height: 300px;
+}
+
+div.card {
+    padding: 0 !important;
+    height: 450px !important;
+    max-width: 200px !important;
+}
+
+h5.card-title {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+}
+
+#sezione-libri {
+    gap: 1rem;
+    margin-left: 70px;
+}
+
+#btnTop {
+    position: sticky;
+    top: 0;
+}
+
+.list-group-item {
+    border-bottom: 1px solid rgb(201, 201, 201) !important;
+}
+
+.btn-danger {
+    height: 40px;
+    width: 35px;
+}
+
+.offcanvas {
+    min-width: 300px !important;
+}
+
+.totale {
+    margin-left: 30px;
+}
+
+.fa-trash-can {
+ font-size: 20pt;
+}
+
+.btn-cestino {
+    border: 0;
+    background-color: white;
+}
+
+.span-price {
+    border-radius: 20px;
+    background-color: aliceblue;
+}
