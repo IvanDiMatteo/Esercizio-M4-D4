@@ -11,7 +11,7 @@ books()
         let sezione = document.getElementById("sezione-libri");
         sezione.innerHTML = data
         .map((element) => {
-          return `<div class="card col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12" id="${element.asin}" style="width: 18rem;">
+          return `<div class="card col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12" id="${element.asin}" style="width: 18rem;">
                 <img src="${element.img}" class="card-img-top" alt="copertina di ${element.title}">
                     <div class="card-body d-flex flex-column justify-content-between p-0">
                         <h5 class="card-title p-0">${element.title}</h5>
