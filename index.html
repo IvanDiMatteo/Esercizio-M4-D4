@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/599f069921.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="assets/libro.jpg">
+    <title>bookShop</title>
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary">
+    <!-- Navabar -->
+    <nav class="navbar bg-body-tertiary sticky-top bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-            <button class="btn float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" id="btnTop">
-                Cart
+            <button class="btn float-end btn-cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button" id="btnTop">
+                <i class="fa-solid fa-cart-shopping"></i>
             </button>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -21,26 +23,29 @@
         </div>
     </nav>
 
-    <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <h1 class="d-flex justify-content-center align-items-center mb-4">bookShop</h1>
+
+    <!-- Sidebar carrello -->
+    <div class="offcanvas offcanvas-start w-25 bg-dark" data-bs-theme="dark" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
         <div class="offcanvas-header">
             <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas">Cart</h6>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body px-0">
-            <ul id="listaCarrello">
-            </ul>
             <div class="d-flex justify-content-between">
                 <p class="totale">TOTALE CARRELLO €<span class="totCarrello"></span></p>
-                <button class="btn-cestino mb-2" onclick="trashCan()"><i class="fa-solid fa-trash-can me-4 pe-3"></i></button>           
+                <button class="btn-cestino mb-2 bg-dark" data-bs-theme="dark" onclick="trashCan()"><i class="fa-solid fa-trash-can me-4 pe-3"></i></button>           
             </div>
+            <ul id="listaCarrello">
+            </ul>           
         </div>
     </div>
+
+    <!-- Sezione libri -->
     <div class="container">
         <section class="row" id="sezione-libri">
         </section>
     </div>
-
-
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="script.js"></script>

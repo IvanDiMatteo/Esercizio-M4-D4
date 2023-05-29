@@ -1,9 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(assets/libreria.jpg);
+    background-attachment: fixed;
+}
+
+/* Titolo sito */
+body > h1 {
+    font-family: 'Bree Serif', serif;
+    font-size: 60pt;
+    color: whitesmoke;
+}
+
+/* Inizio stile crads */
 .card-img-top {
     object-fit: cover !important;
     max-width: 200px;
@@ -30,15 +45,27 @@ h5.card-title {
     margin-left: 70px;
 }
 
-#btnTop {
-    position: sticky;
-    top: 0;
-}
-
 .list-group-item {
-    border-bottom: 1px solid rgb(201, 201, 201) !important;
+    border-top: 1px solid rgb(201, 201, 201) !important;
 }
 
+.card {
+    -webkit-box-shadow: 4px 8px 3px 4px rgba(0,0,0,0.65) !important;
+}
+
+.card:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    z-index: 5;
+}
+  
+.card.fade-in {
+    opacity: 0;
+    animation: fadein 0.5s forwards;
+}
+/* Fine stile cards */
+
+/* Inizio stile elementi nel carrello */
 .btn-danger {
     height: 40px;
     width: 35px;
@@ -52,8 +79,14 @@ h5.card-title {
     margin-left: 30px;
 }
 
+.btn-cart:hover {
+    color: #dadada !important;
+}
+
 .fa-trash-can {
- font-size: 20pt;
+    background-color: #212529;
+    color: white;
+    font-size: 20pt;
 }
 
 .btn-cestino {
@@ -62,6 +95,36 @@ h5.card-title {
 }
 
 .span-price {
+    color: rgb(66, 66, 66);
     border-radius: 20px;
-    background-color: aliceblue;
+    background-color: rgb(223, 223, 223);
 }
+
+/* Animazioni che vengono aggiunte/rimosse tramite JS alla riga 41 in script.js */
+.list-group-item.start-animation {
+    -webkit-animation: fadein 1.3s, slide-right .2s forwards;
+    transform: translateX(-100%);
+}
+
+.list-group-item.exit-animation {
+    -webkit-animation: fadeout .3s, slide-left .2s forwards;
+}
+
+@-webkit-keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+  
+@-webkit-keyframes slide-left {
+    to {transform: translateX(-150%);}
+}
+
+@-webkit-keyframes slide-right {
+    to {transform:translateX(0);}
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/* Fine stile elementi nel carrello */
