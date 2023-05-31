@@ -70,6 +70,11 @@ const trashCan = () => {
     spanTotale.innerText = "0.00";
     array.length = 0;
 };
+
+function saltaCard(card) {
+    let cardSalta = document.getElementById(`${card}`)
+    cardSalta.classList.toggle("d-none");
+}
   
 let cards = [];
 
@@ -119,7 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="card-body d-flex flex-column justify-content-between p-0">
                             <h5 class="card-title p-0 px-1">${element.title}</h5>
                             <p class="card-text p-0 px-1">€ ${element.price}</p>
+                            <div class="d-flex justify-content-around">
+                            <button type="button" class="btn btn-success p-0" onclick="saltaCard(${element.asin})">Salta</button>
                             <button type="button" class="btn btn-primary p-0" onclick="addToCart('${element.title}', '${element.price}')">Add to cart</button>
+                            </div>
                         </div>
                     </div>`;
         })
